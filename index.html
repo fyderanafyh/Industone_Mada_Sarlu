@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f2">
+  <meta name="description" content="INDUSTONE MADA accompagne vos demandes d’achat et d’exportation de mica, de pierres industrielles et de pierres fines depuis Madagascar.">
+  <title>INDUSTONE MADA — Minéraux de Madagascar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f7f6f2;
+      --white: #fff;
+      --ink: #202a25;
+      --muted: #69746d;
+      --green: #304b3d;
+      --green-dark: #24392e;
+      --green-pale: #e8eee8;
+      --gold: #b28b52;
+      --line: #e7e5dd;
+      --shadow: 0 22px 60px rgba(36, 48, 39, .09);
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: "DM Sans", sans-serif;
+      --display: "Manrope", sans-serif;
+      --header-height: 82px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-height) + 20px); }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    body, button, input, textarea { font-family: var(--sans); }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+    button { color: inherit; }
+    ::selection { background: #dce7dc; color: var(--green-dark); }
+    :focus-visible { outline: 3px solid #c09b63; outline-offset: 4px; }
+
+    .container { width: min(1160px, calc(100% - 64px)); margin-inline: auto; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { width: 24px; height: 1px; background: var(--gold); content: ""; }
+    .section-heading { max-width: 660px; margin: 0 auto 46px; text-align: center; }
+    .section-heading .eyebrow { justify-content: center; }
+    .section-heading h2 {
+      margin: 14px 0 12px;
+      font-family: var(--display);
+      font-size: clamp(30px, 4vw, 44px);
+      font-weight: 600;
+      letter-spacing: -.055em;
+      line-height: 1.15;
+    }
+    .section-heading p { margin: 0; color: var(--muted); font-size: 15px; }
+    .button {
+      display: inline-flex;
+      min-height: 50px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 22px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      background: var(--green);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease;
+      cursor: pointer;
+    }
+    .button:hover { transform: translateY(-2px); background: var(--green-dark); }
+    .button--outline { border-color: rgba(255, 255, 255, .48); background: transparent; color: var(--white); }
+    .button--outline:hover { border-color: var(--white); background: var(--white); color: var(--green-dark); }
+    .button--light { border-color: var(--line); background: var(--white); color: var(--green-dark); }
+    .button--light:hover { border-color: var(--green); background: var(--green); color: var(--white); }
+    .button svg { width: 16px; height: 16px; }
+
+    .site-header {
+      position: sticky;
+      z-index: 20;
+      top: 0;
+      height: var(--header-height);
+      border-bottom: 1px solid rgba(32, 42, 37, .08);
+      background: rgba(247, 246, 242, .94);
+      backdrop-filter: blur(14px);
+    }
+    .header-inner { display: flex; height: 100%; align-items: center; justify-content: space-between; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
+    .brand-mark {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      border: 1px solid rgba(48, 75, 61, .2);
+      border-radius: 50%;
+      color: var(--green);
+    }
+    .brand-mark svg { width: 21px; height: 21px; }
+    .brand-name { display: grid; color: var(--ink); font-family: var(--display); font-size: 14px; font-weight: 800; letter-spacing: .08em; line-height: 1.15; }
+    .brand-name span { margin-top: 4px; color: var(--muted); font-family: var(--sans); font-size: 9px; font-weight: 600; letter-spacing: .2em; }
+    .site-nav { display: flex; align-items: center; gap: 34px; }
+    .site-nav a { color: #505a53; font-size: 12px; font-weight: 600; text-decoration: none; transition: color .2s ease; }
+    .site-nav a:hover, .site-nav a[aria-current="location"] { color: var(--green); }
+    .site-nav a[aria-current="location"]:not(.nav-cta) { border-radius: 3px; background: var(--green-pale); color: var(--green-dark); }
+    .site-nav .nav-cta { padding: 11px 16px; border: 1px solid rgba(48, 75, 61, .3); border-radius: 3px; color: var(--green); }
+    .site-nav .nav-cta:hover, .site-nav .nav-cta[aria-current="location"] { background: var(--green); color: var(--white); }
+    .language-switch { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 3px; padding: 3px; border: 1px solid rgba(48, 75, 61, .18); border-radius: 4px; }
+    .language-button { min-width: 34px; min-height: 30px; padding: 0 7px; border: 0; border-radius: 2px; background: transparent; color: var(--muted); font-size: 10px; font-weight: 700; cursor: pointer; transition: background .2s ease, color .2s ease; }
+    .language-button:hover { color: var(--green); }
+    .language-button[aria-pressed="true"] { background: var(--green); color: var(--white); }
+    .menu-toggle { display: none; width: 44px; height: 44px; place-items: center; border: 1px solid var(--line); border-radius: 4px; background: transparent; cursor: pointer; }
+    .menu-toggle svg { width: 21px; height: 21px; }
+
+    .hero {
+      position: relative;
+      display: flex;
+      min-height: min(700px, calc(100svh - var(--header-height)));
+      align-items: center;
+      overflow: hidden;
+      background: #27352e;
+      color: var(--white);
+    }
+    .hero::before {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(21, 32, 27, .88) 0%, rgba(21, 32, 27, .71) 46%, rgba(21, 32, 27, .15) 100%), url("https://upload.wikimedia.org/wikipedia/commons/a/a2/Muscovite-121758.jpg") center 52% / cover;
+      content: "";
+    }
+    .hero-inner { position: relative; z-index: 1; padding-block: 92px 100px; }
+    .hero .eyebrow { color: #e0c99f; }
+    .hero h1 {
+      max-width: 710px;
+      margin: 23px 0 20px;
+      font-family: var(--display);
+      font-size: clamp(43px, 7vw, 78px);
+      font-weight: 500;
+      letter-spacing: -.065em;
+      line-height: 1.04;
+    }
+    .hero h1 em { color: #e2c797; font-family: var(--serif); font-weight: 400; }
+    .hero-copy { max-width: 500px; margin: 0; color: rgba(255, 255, 255, .79); font-size: 16px; line-height: 1.8; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 62px; color: rgba(255, 255, 255, .73); font-size: 11px; letter-spacing: .04em; }
+    .hero-meta span { display: inline-flex; align-items: center; gap: 9px; }
+    .hero-meta span::before { width: 5px; height: 5px; border-radius: 50%; background: #d5b578; content: ""; }
+    .hero-index { position: absolute; right: 0; bottom: 40px; color: rgba(255, 255, 255, .7); font-family: var(--serif); font-size: 13px; letter-spacing: .18em; writing-mode: vertical-rl; }
+
+    .trust-strip { border-bottom: 1px solid var(--line); background: var(--white); }
+    .trust-inner { display: grid; grid-template-columns: repeat(3, 1fr); padding-block: 27px; }
+    .trust-item { display: flex; align-items: center; justify-content: center; gap: 12px; color: var(--green); }
+    .trust-item + .trust-item { border-left: 1px solid var(--line); }
+    .trust-item svg { width: 20px; height: 20px; flex: 0 0 auto; }
+    .trust-item span { color: #4e5a51; font-size: 12px; font-weight: 600; }
+
+    .section { padding-block: 104px; }
+    .products-section { background: var(--white); }
+    .filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 9px; margin: -16px 0 34px; }
+    .filter-button {
+      padding: 9px 15px;
+      border: 1px solid var(--line);
+      border-radius: 99px;
+      background: transparent;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 600;
+      transition: all .2s ease;
+      cursor: pointer;
+    }
+    .filter-button:hover, .filter-button[aria-pressed="true"] { border-color: var(--green); background: var(--green); color: var(--white); }
+    .product-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+    .product-card { overflow: hidden; border: 1px solid var(--line); background: var(--white); transition: transform .25s ease, box-shadow .25s ease; }
+    .product-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .product-card[hidden] { display: none; }
+    .product-image { position: relative; height: 250px; overflow: hidden; background: #e7e5dd; }
+    .product-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+    .product-card:hover .product-image img { transform: scale(1.045); }
+    .product-tag { position: absolute; top: 16px; left: 16px; padding: 6px 10px; background: rgba(255, 255, 255, .92); color: var(--green); font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .product-credit { position: absolute; right: 0; bottom: 0; left: 0; padding: 17px 12px 9px; background: linear-gradient(transparent, rgba(17, 25, 20, .74)); color: rgba(255, 255, 255, .84); font-size: 9px; line-height: 1.4; }
+    .product-credit a { color: inherit; text-decoration-color: rgba(255, 255, 255, .55); text-underline-offset: 2px; }
+    .product-credit a:hover { color: #fff; }
+    .product-body { padding: 23px 23px 24px; }
+    .product-body h3 { margin: 0 0 8px; font-family: var(--display); font-size: 19px; font-weight: 600; letter-spacing: -.035em; }
+    .product-body p { min-height: 52px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+    .product-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 17px; color: var(--green); font-size: 11px; font-weight: 700; text-decoration: none; }
+    .product-link svg { width: 14px; height: 14px; transition: transform .2s ease; }
+    .product-link:hover svg { transform: translateX(4px); }
+    .filter-empty { margin: 30px 0 0; color: var(--muted); text-align: center; }
+
+    .about-section { overflow: hidden; }
+    .about-layout { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 88px; }
+    .about-visual { position: relative; min-height: 470px; }
+    .about-visual img { width: 84%; height: 440px; object-fit: cover; }
+    .about-note { position: absolute; right: 0; bottom: 0; width: 48%; padding: 25px 26px; background: var(--green); color: var(--white); }
+    .about-note strong { display: block; font-family: var(--serif); font-size: 30px; font-weight: 400; line-height: 1.1; }
+    .about-note span { display: block; margin-top: 9px; color: rgba(255, 255, 255, .74); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+    .about-copy .eyebrow { margin-bottom: 13px; }
+    .about-copy h2 { margin: 0 0 19px; font-family: var(--display); font-size: clamp(31px, 4vw, 45px); font-weight: 600; letter-spacing: -.06em; line-height: 1.12; }
+    .about-copy > p { margin: 0; color: var(--muted); font-size: 14px; }
+    .about-points { display: grid; gap: 17px; margin: 28px 0 0; padding: 0; list-style: none; }
+    .about-points li { display: flex; align-items: flex-start; gap: 12px; color: #48554c; font-size: 12px; }
+    .point-icon { display: grid; width: 23px; height: 23px; flex: 0 0 auto; place-items: center; border-radius: 50%; background: var(--green-pale); color: var(--green); }
+    .point-icon svg { width: 13px; height: 13px; }
+
+    .process-section { background: #eeeee8; }
+    .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+    .process-card { padding: 30px 34px; border-top: 1px solid #d6d8ce; }
+    .process-card + .process-card { border-left: 1px solid #d6d8ce; }
+    .process-number { color: var(--gold); font-family: var(--serif); font-size: 16px; }
+    .process-card h3 { margin: 19px 0 9px; font-family: var(--display); font-size: 17px; font-weight: 600; letter-spacing: -.025em; }
+    .process-card p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.8; }
+
+    .contact-section { background: var(--green-dark); color: var(--white); }
+    .contact-layout { display: grid; grid-template-columns: .8fr 1.2fr; align-items: start; gap: 70px; }
+    .contact-copy .eyebrow { color: #d9c49d; }
+    .contact-copy h2 { margin: 16px 0 14px; font-family: var(--display); font-size: clamp(34px, 4vw, 48px); font-weight: 500; letter-spacing: -.06em; line-height: 1.1; }
+    .contact-copy > p { max-width: 390px; margin: 0; color: rgba(255, 255, 255, .68); font-size: 14px; }
+    .company-details { display: grid; gap: 15px; margin: 31px 0 0; }
+    .company-details div { display: grid; gap: 3px; }
+    .company-details dt { color: #d9c49d; font-size: 9px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .company-details dd { margin: 0; color: rgba(255, 255, 255, .86); font-size: 12px; }
+    .contact-form { padding: 31px; background: var(--white); color: var(--ink); }
+    .contact-form h3 { margin: 0 0 5px; font-family: var(--display); font-size: 19px; font-weight: 600; letter-spacing: -.03em; }
+    .form-intro { margin: 0 0 23px; color: var(--muted); font-size: 11px; }
+    .contact-options { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 23px; }
+    .contact-option {
+      min-height: 51px;
+      padding: 8px 6px;
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      background: var(--white);
+      color: #58635b;
+      font-size: 11px;
+      font-weight: 600;
+      transition: border-color .2s ease, background .2s ease, color .2s ease;
+      cursor: pointer;
+    }
+    .contact-option:hover { border-color: var(--green); }
+    .contact-option[aria-pressed="true"] { border-color: var(--green); background: var(--green-pale); color: var(--green-dark); }
+    .contact-option span { display: block; margin-top: 2px; color: var(--muted); font-size: 9px; font-weight: 400; }
+    .field { margin-top: 15px; }
+    .field label { display: block; margin-bottom: 6px; color: #47534a; font-size: 11px; font-weight: 600; }
+    .field input, .field textarea {
+      display: block;
+      width: 100%;
+      padding: 12px 13px;
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      background: #fcfcfa;
+      color: var(--ink);
+      font-size: 12px;
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+    .field input { min-height: 45px; }
+    .field textarea { min-height: 115px; resize: vertical; }
+    .field input:focus, .field textarea:focus { border-color: var(--green); outline: 0; box-shadow: 0 0 0 3px rgba(48, 75, 61, .1); }
+    .field input::placeholder, .field textarea::placeholder { color: #9ba39c; }
+    .form-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 18px; }
+    .form-actions .button { min-height: 46px; padding-inline: 12px; font-size: 11px; }
+    .button--whatsapp { background: #218b59; }
+    .button--whatsapp:hover { background: #176d45; }
+    .button--email { background: var(--green); }
+    .form-status { min-height: 22px; margin: 12px 0 0; color: var(--green); font-size: 11px; }
+
+    .site-footer { padding-block: 26px; background: #1d3026; color: rgba(255, 255, 255, .65); }
+    .footer-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; }
+    .footer-inner p { margin: 0; font-size: 10px; }
+    .footer-inner a { color: rgba(255, 255, 255, .84); text-decoration: none; }
+    .footer-inner a:hover { color: #e2c797; }
+    .image-sources { padding-block: 14px; background: #18291f; color: rgba(255, 255, 255, .65); }
+    .image-sources p { margin: 0; font-size: 10px; }
+    .image-sources a { color: rgba(255, 255, 255, .85); text-underline-offset: 2px; }
+    .image-sources-note { margin: 20px 0 0; color: var(--muted); font-size: 10px; text-align: center; }
+
+    @media (max-width: 860px) {
+      .menu-toggle { display: grid; flex: 0 0 auto; }
+      .site-nav {
+        position: absolute;
+        top: calc(100% + 1px);
+        right: 0;
+        left: 0;
+        display: none;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px 20px 17px;
+        border-bottom: 1px solid var(--line);
+        background: var(--paper);
+        box-shadow: 0 15px 25px rgba(36, 48, 39, .08);
+      }
+      .site-nav.is-open { display: flex; flex-direction: column; }
+      .site-nav a { padding: 12px 0; }
+      .site-nav .nav-cta { margin-top: 7px; padding: 11px 13px; text-align: center; }
+      .site-nav a[aria-current="location"]:not(.nav-cta) { padding-left: 12px; }
+    }
+    @media (max-width: 900px) {
+      .site-nav:not(.is-open) { gap: 21px; }
+      .about-layout { gap: 48px; }
+      .contact-layout { gap: 38px; }
+      .product-image { height: 215px; }
+    }
+    @media (max-width: 700px) {
+      :root { --header-height: 70px; }
+      .container { width: min(100% - 40px, 540px); }
+      .site-header { position: sticky; }
+      .hero { min-height: 650px; min-height: min(700px, calc(100svh - var(--header-height))); }
+      .hero::before { background-position: 57% center; background-image: linear-gradient(90deg, rgba(21, 32, 27, .83), rgba(21, 32, 27, .46)), url("https://upload.wikimedia.org/wikipedia/commons/a/a2/Muscovite-121758.jpg"); }
+      .hero-inner { padding-block: 76px; }
+      .hero h1 { max-width: 560px; font-size: clamp(44px, 11vw, 66px); }
+      .hero-copy { font-size: 14px; }
+      .hero-meta { gap: 12px 19px; margin-top: 44px; font-size: 10px; }
+      .hero-index { right: 20px; bottom: 22px; }
+      .trust-inner { grid-template-columns: 1fr; gap: 17px; padding-block: 21px; }
+      .trust-item { justify-content: flex-start; }
+      .trust-item + .trust-item { padding-top: 15px; border-top: 1px solid var(--line); border-left: 0; }
+      .section { padding-block: 76px; }
+      .section-heading { margin-bottom: 34px; }
+      .section-heading p { font-size: 13px; }
+      .product-grid { grid-template-columns: 1fr; gap: 15px; }
+      .product-card { display: grid; grid-template-columns: minmax(110px, .72fr) 1.28fr; }
+      .product-image { height: 100%; min-height: 205px; }
+      .product-body { align-self: center; padding: 19px 16px; }
+      .product-body h3 { font-size: 16px; }
+      .product-body p { min-height: auto; font-size: 11px; }
+      .product-tag { top: 10px; left: 9px; padding: 5px 7px; font-size: 8px; }
+      .about-layout { grid-template-columns: 1fr; gap: 35px; }
+      .about-visual { min-height: 380px; }
+      .about-visual img { width: 86%; height: 350px; }
+      .about-note { width: 49%; padding: 20px; }
+      .about-note strong { font-size: 25px; }
+      .process-grid { grid-template-columns: 1fr; }
+      .process-card { padding: 23px 12px; }
+      .process-card + .process-card { border-top: 1px solid #d6d8ce; border-left: 0; }
+      .process-card h3 { margin-top: 11px; }
+      .contact-layout { grid-template-columns: 1fr; gap: 32px; }
+      .contact-copy h2 { max-width: 440px; }
+      .company-details { grid-template-columns: 1fr 1fr; gap: 17px; }
+      .contact-form { padding: 24px 20px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 390px) {
+      .container { width: calc(100% - 32px); }
+      .header-inner { gap: 7px; }
+      .brand { min-width: 0; gap: 7px; }
+      .brand-mark { width: 34px; height: 34px; }
+      .brand-name { font-size: 12px; letter-spacing: .05em; }
+      .brand-name span { font-size: 8px; letter-spacing: .12em; }
+      .language-switch { padding: 2px; }
+      .language-button { min-width: 31px; padding-inline: 5px; }
+      .menu-toggle { width: 40px; min-width: 40px; height: 40px; }
+      .hero-actions { align-items: stretch; flex-direction: column; }
+      .hero-actions .button { width: 100%; }
+      .product-card { grid-template-columns: minmax(96px, .65fr) 1.35fr; }
+      .product-image { min-height: 220px; }
+      .contact-options { grid-template-columns: repeat(2, 1fr); }
+      .form-actions { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#accueil" aria-label="INDUSTONE MADA, accueil">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="m12 2 8.5 5v10L12 22l-8.5-5V7L12 2Z" stroke="currentColor" stroke-width="1.35"/><path d="m12 2 4.3 8-4.3 12-4.3-12L12 2Z" stroke="currentColor" stroke-width="1.15"/><path d="M3.5 7 12 10l8.5-3" stroke="currentColor" stroke-width="1.15"/></svg>
+        </span>
+        <span class="brand-name">INDUSTONE MADA<span data-i18n="brandTagline">MINÉRAUX DE MADAGASCAR</span></span>
+      </a>
+      <div class="language-switch" role="group" aria-label="Choose language" data-i18n-aria="languageGroup">
+        <button class="language-button" type="button" lang="fr" data-language="fr" aria-pressed="true">FR</button>
+        <button class="language-button" type="button" lang="en" data-language="en" aria-pressed="false">EN</button>
+      </div>
+      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" data-i18n-aria="menuOpen" aria-expanded="false" aria-controls="site-navigation">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      </button>
+      <nav class="site-nav" id="site-navigation" aria-label="Navigation principale" data-i18n-aria="mainNavigation">
+        <a href="#accueil" data-i18n="navHome">Accueil</a>
+        <a href="#produits" data-i18n="navProducts">Nos produits</a>
+        <a href="#apropos" data-i18n="navAbout">Notre maison</a>
+        <a href="#approche" data-i18n="navApproach">Notre approche</a>
+        <a class="nav-cta" href="#contact"><span data-i18n="navContact">Parlons de votre projet</span> <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <span class="eyebrow" data-i18n="heroEyebrow">Matières naturelles · Madagascar</span>
+        <h1 id="hero-title" data-i18n-html="heroTitle">La richesse de la terre, <em>à la source.</em></h1>
+        <p class="hero-copy" data-i18n="heroCopy">INDUSTONE MADA accompagne l’achat et l’exportation de mica et de pierres depuis Madagascar, avec un interlocuteur attentif à chaque étape.</p>
+        <div class="hero-actions">
+          <a class="button" href="#produits"><span data-i18n="heroProducts">Découvrir nos produits</span> <span aria-hidden="true">↗</span></a>
+          <a class="button button--outline" href="#contact" data-i18n="heroContact">Nous contacter</a>
+        </div>
+        <div class="hero-meta" aria-label="Informations sur l’entreprise" data-i18n-aria="heroMetaLabel">
+          <span data-i18n="heroMeta1">Entreprise basée à Madagascar</span>
+          <span data-i18n="heroMeta2">Échanges directs</span>
+          <span data-i18n="heroMeta3">Demandes sur mesure</span>
+        </div>
+        <span class="hero-index" aria-hidden="true">01 — 04</span>
+      </div>
+    </section>
+
+    <div class="trust-strip" aria-label="Nos engagements" data-i18n-aria="trustLabel">
+      <div class="container trust-inner">
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-3.5 7-9V5l-7-3-7 3v7c0 5.5 7 9 7 9Z" stroke="currentColor" stroke-width="1.5"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span data-i18n="trust1">Un échange de confiance</span>
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18" stroke="currentColor" stroke-width="1.3"/></svg>
+          <span data-i18n="trust2">Une ouverture sur l’international</span>
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9L12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <span data-i18n="trust3">Une attention aux matières</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="section products-section" id="produits" aria-labelledby="products-title">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow" data-i18n="productsEyebrow">Notre sélection</span>
+          <h2 id="products-title" data-i18n="productsTitle">Des matières singulières, des possibilités multiples.</h2>
+          <p data-i18n="productsIntro">Découvrez les familles de produits que nous proposons. Contactez-nous pour échanger sur votre besoin.</p>
+        </div>
+        <div class="filters" role="group" aria-label="Filtrer les produits" data-i18n-aria="filterGroup">
+          <button class="filter-button" type="button" data-filter="all" aria-pressed="true" data-i18n="filterAll">Tout voir</button>
+          <button class="filter-button" type="button" data-filter="mica" aria-pressed="false" data-i18n="filterMica">Mica</button>
+          <button class="filter-button" type="button" data-filter="pierres" aria-pressed="false" data-i18n="filterStones">Pierres</button>
+        </div>
+        <div class="product-grid" id="product-grid">
+          <article class="product-card" data-category="mica">
+            <div class="product-image">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Muscovite-121758.jpg" alt="Cristal naturel de muscovite, variété claire de mica" data-i18n-alt="imageMuscovite" loading="lazy">
+              <span class="product-tag" data-i18n="filterMica">Mica</span>
+              <span class="product-credit"><a href="https://commons.wikimedia.org/wiki/File:Muscovite-121758.jpg" target="_blank" rel="noreferrer" data-i18n-html="creditLavinsky">Photo : Robert M. Lavinsky · CC BY-SA 3.0</a></span>
+            </div>
+            <div class="product-body">
+              <h3 data-i18n="micaMuscoviteTitle">Muscovite</h3>
+              <p data-i18n="micaMuscoviteCopy">Cristal naturel en feuillets, représentatif de la famille des micas.</p>
+              <a class="product-link" href="#contact" data-product="Muscovite"><span data-i18n="productAsk">Demander des informations</span> <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </article>
+          <article class="product-card" data-category="mica">
+            <div class="product-image">
+              <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Biotite_mica_1_%2832075636786%29.jpg/960px-Biotite_mica_1_%2832075636786%29.jpg" alt="Échantillon naturel de biotite aux couches feuilletées" data-i18n-alt="imageBiotite" loading="lazy">
+              <span class="product-tag" data-i18n="filterMica">Mica</span>
+              <span class="product-credit"><a href="https://commons.wikimedia.org/wiki/File:Biotite_mica_1_(32075636786).jpg" target="_blank" rel="noreferrer" data-i18n-html="creditJames">Photo : James St. John · CC BY 2.0</a></span>
+            </div>
+            <div class="product-body">
+              <h3 data-i18n="micaBiotiteTitle">Biotite</h3>
+              <p data-i18n="micaBiotiteCopy">Exemple de mica sombre à la structure cristalline bien visible.</p>
+              <a class="product-link" href="#contact" data-product="Biotite"><span data-i18n="productAsk">Demander des informations</span> <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </article>
+          <article class="product-card" data-category="mica">
+            <div class="product-image">
+              <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Biotite_mica_2_%2831739438210%29.jpg/960px-Biotite_mica_2_%2831739438210%29.jpg" alt="Spécimen de biotite naturelle aux cristaux en éventail" data-i18n-alt="imageBiotiteFan" loading="lazy">
+              <span class="product-tag" data-i18n="filterMica">Mica</span>
+              <span class="product-credit"><a href="https://commons.wikimedia.org/wiki/File:Biotite_mica_2_(31739438210).jpg" target="_blank" rel="noreferrer" data-i18n-html="creditJames">Photo : James St. John · CC BY 2.0</a></span>
+            </div>
+            <div class="product-body">
+              <h3 data-i18n="micaBiotiteFanTitle">Biotite en éventail</h3>
+              <p data-i18n="micaBiotiteFanCopy">Spécimen naturel présentant les lamelles caractéristiques de la biotite.</p>
+              <a class="product-link" href="#contact" data-product="Biotite en éventail"><span data-i18n="productAsk">Demander des informations</span> <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </article>
+          <article class="product-card" data-category="mica">
+            <div class="product-image">
+              <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Muscovite_mica_%26_biotite_mica_derived_from_pegmatitic_granite_%28Ruggles_Pegmatite%2C_Devonian%3B_Ruggles_Pegmatite_Mine%2C_New_Hampshire%2C_USA%29_1_%288291623644%29.jpg/960px-Muscovite_mica_%26_biotite_mica_derived_from_pegmatitic_granite_%28Ruggles_Pegmatite%2C_Devonian%3B_Ruggles_Pegmatite_Mine%2C_New_Hampshire%2C_USA%29_1_%288291623644%29.jpg" alt="Muscovite et biotite associées dans une pegmatite" data-i18n-alt="imageMicaPegmatite" loading="lazy">
+              <span class="product-tag" data-i18n="filterMica">Mica</span>
+              <span class="product-credit"><a href="https://commons.wikimedia.org/wiki/File:Muscovite_mica_%26_biotite_mica_derived_from_pegmatitic_granite_(Ruggles_Pegmatite,_Devonian;_Ruggles_Pegmatite_Mine,_New_Hampshire,_USA)_1_(8291623644).jpg" target="_blank" rel="noreferrer" data-i18n-html="creditJames">Photo : James St. John · CC BY 2.0</a></span>
+            </div>
+            <div class="product-body">
+              <h3 data-i18n="micaPegmatiteTitle">Mica en pegmatite</h3>
+              <p data-i18n="micaPegmatiteCopy">Muscovite et biotite observées dans une roche pegmatitique.</p>
+              <a class="product-link" href="#contact" data-product="Mica en pegmatite"><span data-i18n="productAsk">Demander des informations</span> <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </article>
+          <article class="product-card" data-category="pierres">
+            <div class="product-image">
+              <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Crystals_of_liddicoatite_and_microcline.jpg/960px-Crystals_of_liddicoatite_and_microcline.jpg" alt="Cristaux de liddicoatite et de microcline provenant de Madagascar" data-i18n-alt="imageLiddicoatiteMicrocline" loading="lazy">
+              <span class="product-tag" data-i18n="filterStones">Pierres</span>
+              <span class="product-credit"><a href="https://commons.wikimedia.org/wiki/File:Crystals_of_liddicoatite_and_microcline.jpg" target="_blank" rel="noreferrer" data-i18n-html="creditGery">Photo : Parent Géry · CC0</a></span>
+            </div>
+            <div class="product-body">
+              <h3 data-i18n="stoneLiddicoatiteTitle">Liddicoatite & microcline</h3>
+              <p data-i18n="stoneLiddicoatiteCopy">Tourmaline malgache présentée avec son minéral associé, le microcline.</p>
+              <a class="product-link" href="#contact" data-product="Liddicoatite et microcline"><span data-i18n="productAsk">Demander des informations</span> <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </article>
+          <article class="product-card" data-category="pierres">
+            <div class="product-image">
+              <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Crystals_of_liddicoatite_and_quartz.jpg/960px-Crystals_of_liddicoatite_and_quartz.jpg" alt="Cristaux de liddicoatite et de quartz" data-i18n-alt="imageLiddicoatiteQuartz" loading="lazy">
+              <span class="product-tag" data-i18n="filterStones">Pierres</span>
+              <span class="product-credit"><a href="https://commons.wikimedia.org/wiki/File:Crystals_of_liddicoatite_and_quartz.jpg" target="_blank" rel="noreferrer" data-i18n-html="creditGeryShare">Photo : Parent Géry · CC BY-SA 3.0</a></span>
+            </div>
+            <div class="product-body">
+              <h3 data-i18n="stoneQuartzTitle">Liddicoatite & quartz</h3>
+              <p data-i18n="stoneQuartzCopy">Un spécimen naturel de tourmaline associé à des cristaux de quartz.</p>
+              <a class="product-link" href="#contact" data-product="Liddicoatite et quartz"><span data-i18n="productAsk">Demander des informations</span> <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </article>
+          <article class="product-card" data-category="pierres">
+            <div class="product-image">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Liddicoatite-133836.jpg" alt="Échantillon cristallisé de liddicoatite, tourmaline du Madagascar" data-i18n-alt="imageLiddicoatite" loading="lazy">
+              <span class="product-tag" data-i18n="filterStones">Pierres</span>
+              <span class="product-credit"><a href="https://commons.wikimedia.org/wiki/File:Liddicoatite-133836.jpg" target="_blank" rel="noreferrer" data-i18n-html="creditLavinsky">Photo : Robert M. Lavinsky · CC BY-SA 3.0</a></span>
+            </div>
+            <div class="product-body">
+              <h3 data-i18n="stoneTourmalineTitle">Tourmaline liddicoatite</h3>
+              <p data-i18n="stoneTourmalineCopy">Un exemple de tourmaline cristallisée provenant des pegmatites malgaches.</p>
+              <a class="product-link" href="#contact" data-product="Tourmaline liddicoatite"><span data-i18n="productAsk">Demander des informations</span> <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </article>
+          <article class="product-card" data-category="pierres">
+            <div class="product-image">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Liddicoatite-Tourmaline-62349.jpg" alt="Tourmaline liddicoatite aux couleurs naturelles" data-i18n-alt="imageTourmaline" loading="lazy">
+              <span class="product-tag" data-i18n="filterStones">Pierres</span>
+              <span class="product-credit"><a href="https://commons.wikimedia.org/wiki/File:Liddicoatite-Tourmaline-62349.jpg" target="_blank" rel="noreferrer" data-i18n-html="creditLavinsky">Photo : Robert M. Lavinsky · CC BY-SA 3.0</a></span>
+            </div>
+            <div class="product-body">
+              <h3 data-i18n="stoneTourmalineColorsTitle">Tourmaline colorée</h3>
+              <p data-i18n="stoneTourmalineColorsCopy">Les nuances et zonations colorées caractéristiques de la tourmaline.</p>
+              <a class="product-link" href="#contact" data-product="Tourmaline colorée"><span data-i18n="productAsk">Demander des informations</span> <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </article>
+        </div>
+        <p class="filter-empty" id="filter-empty" data-i18n="filterEmpty" hidden>Aucun produit ne correspond à ce filtre.</p>
+        <p class="image-sources-note" data-i18n="imageNotice">Photographies de spécimens minéraux réels. Chaque photo est créditée et liée à sa source.</p>
+      </div>
+    </section>
+
+    <section class="section about-section" id="apropos" aria-labelledby="about-title">
+      <div class="container about-layout">
+        <div class="about-visual">
+          <img src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1100&q=85" alt="Paysage naturel verdoyant de Madagascar" data-i18n-alt="aboutImage" loading="lazy">
+          <div class="about-note"><strong data-i18n="aboutNote">Au cœur de Madagascar</strong><span data-i18n="aboutLocation">Ancrés à Antehiroka</span></div>
+        </div>
+        <div class="about-copy">
+          <span class="eyebrow" data-i18n="aboutEyebrow">À propos de nous</span>
+          <h2 id="about-title" data-i18n="aboutTitle">Une entreprise locale, tournée vers le monde.</h2>
+          <p data-i18n="aboutCopy">INDUSTONE MADA exerce ses activités d’achat et d’exportation de pierres industrielles, de pierres fines et de mica depuis Madagascar. Nous privilégions les échanges directs afin de comprendre les attentes de chaque partenaire.</p>
+          <ul class="about-points">
+            <li><span class="point-icon"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m3 8 3.2 3.2L13 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="aboutPoint1">Un interlocuteur pour parler de vos besoins et de votre demande.</span></li>
+            <li><span class="point-icon"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m3 8 3.2 3.2L13 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="aboutPoint2">Des échanges adaptés à la nature des produits recherchés.</span></li>
+            <li><span class="point-icon"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m3 8 3.2 3.2L13 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="aboutPoint3">Une entreprise enregistrée à Madagascar.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process-section" id="approche" aria-labelledby="process-title">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow" data-i18n="processEyebrow">Notre approche</span>
+          <h2 id="process-title" data-i18n="processTitle">Un premier échange, simplement.</h2>
+          <p data-i18n="processIntro">Chaque projet commence par une conversation claire autour de votre besoin.</p>
+        </div>
+        <div class="process-grid">
+          <article class="process-card"><span class="process-number">01</span><h3 data-i18n="processStep1Title">Vous nous partagez votre recherche</h3><p data-i18n="processStep1Copy">Indiquez le produit qui vous intéresse, votre besoin et les informations utiles à votre demande.</p></article>
+          <article class="process-card"><span class="process-number">02</span><h3 data-i18n="processStep2Title">Nous échangeons sur les détails</h3><p data-i18n="processStep2Copy">Un interlocuteur prend connaissance de votre demande et échange avec vous sur les éléments à préciser.</p></article>
+          <article class="process-card"><span class="process-number">03</span><h3 data-i18n="processStep3Title">Nous étudions la suite ensemble</h3><p data-i18n="processStep3Copy">Les disponibilités et modalités sont abordées directement avec vous, en fonction de votre projet.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-layout">
+        <div class="contact-copy">
+          <span class="eyebrow" data-i18n="contactEyebrow">Entrons en contact</span>
+          <h2 id="contact-title" data-i18n="contactTitle">Parlons de votre projet.</h2>
+          <p data-i18n="contactCopy">Choisissez votre interlocuteur et envoyez-nous votre demande par WhatsApp ou par e-mail. Nous serons heureux d’échanger avec vous.</p>
+          <dl class="company-details">
+            <div><dt data-i18n="emailLabel">E-mail</dt><dd><a href="mailto:stephanefanevaniaina@gmail.com">stephanefanevaniaina@gmail.com</a></dd></div>
+            <div><dt data-i18n="addressLabel">Adresse</dt><dd data-i18n="companyAddress">Lot AF 369, Amboaroy Antehiroka, Madagascar</dd></div>
+            <div><dt data-i18n="registrationLabel">Immatriculation</dt><dd>NIF 3018574013 · RCS 2024800668</dd></div>
+          </dl>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <h3 data-i18n="formTitle">Votre demande</h3>
+          <p class="form-intro" data-i18n="formIntro">Sélectionnez un interlocuteur puis choisissez votre moyen de contact.</p>
+          <div class="contact-options" role="group" aria-label="Choisir un interlocuteur" data-i18n-aria="contactGroup">
+            <button class="contact-option" type="button" data-name="Félix" data-phone="261330828689" aria-pressed="true">Félix<span>+261 33 08 286 89</span></button>
+            <button class="contact-option" type="button" data-name="Charline" data-phone="261330828689" aria-pressed="false">Charline<span>+261 33 08 286 89</span></button>
+            <button class="contact-option" type="button" data-name="Aqueel" data-phone="261330828689" aria-pressed="false">Aqueel<span>+261 33 08 286 89</span></button>
+            <button class="contact-option" type="button" data-name="Tonih" data-phone="261330828689" aria-pressed="false">Tonih<span>+261 33 08 286 89</span></button>
+          </div>
+          <div class="field">
+            <label for="client-name"><span data-i18n="nameLabel">Votre nom ou votre entreprise</span> <span aria-hidden="true">*</span></label>
+            <input id="client-name" name="name" type="text" autocomplete="name" placeholder="Ex. : Jean Dupont, Société X" data-i18n-placeholder="namePlaceholder" required>
+          </div>
+          <div class="field">
+            <label for="client-message" data-i18n="messageLabel">Votre message</label>
+            <textarea id="client-message" name="message" placeholder="Quel produit recherchez-vous ? Parlez-nous de votre projet." data-i18n-placeholder="messagePlaceholder"></textarea>
+          </div>
+          <div class="form-actions">
+            <button class="button button--whatsapp" type="submit" value="whatsapp">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M16.8 9.7a6.8 6.8 0 0 1-10.1 5.9L3 16.5l.9-3.6a6.8 6.8 0 1 1 12.9-3.2Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M7.1 6.8c.2-.4.4-.4.6-.4h.4c.1 0 .3 0 .4.3l.6 1.4c.1.2 0 .4-.1.5l-.4.5c-.1.1-.2.3-.1.5.2.4.7 1.1 1.4 1.6.8.6 1.4.8 1.7.9.2.1.4 0 .5-.1l.6-.7c.2-.2.3-.2.5-.1l1.3.6c.2.1.3.2.3.3 0 .2-.1.8-.5 1.2-.4.4-.9.6-1.4.6s-1.4-.2-2.4-.8c-1.3-.7-2.3-1.8-2.7-2.3-.4-.5-.9-1.3-.9-2 0-.7.3-1.2.5-1.5Z" fill="currentColor"/></svg>
+              <span data-i18n="sendWhatsApp">Envoyer par WhatsApp</span>
+            </button>
+            <button class="button button--email" type="submit" value="email">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="2.5" y="4" width="15" height="12" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="m3.5 5 6.5 5.5L16.5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span data-i18n="sendEmail">Envoyer par e-mail</span>
+            </button>
+          </div>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="current-year"></span> INDUSTONE MADA. <span data-i18n="copyright">Tous droits réservés.</span></p>
+      <p>NIF : 3018574013 · STAT : 46625 11 2024 0 10685</p>
+      <p><a href="mailto:stephanefanevaniaina@gmail.com">stephanefanevaniaina@gmail.com</a></p>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navigation = document.querySelector("#site-navigation");
+      const navLinks = navigation.querySelectorAll('a[href^="#"]');
+      const sections = [...document.querySelectorAll("main section[id]")];
+      const filterButtons = document.querySelectorAll(".filter-button");
+      const productCards = document.querySelectorAll(".product-card");
+      const emptyMessage = document.querySelector("#filter-empty");
+      const contactOptions = document.querySelectorAll(".contact-option");
+      const languageButtons = document.querySelectorAll(".language-button");
+      const contactForm = document.querySelector("#contact-form");
+      const formStatus = document.querySelector("#form-status");
+      const languageMessages = {
+        fr: {
+          pageTitle: "INDUSTONE MADA — Minéraux de Madagascar",
+          description: "INDUSTONE MADA accompagne vos demandes d’achat et d’exportation de mica, de pierres industrielles et de pierres fines depuis Madagascar.",
+          brandTagline: "MINÉRAUX DE MADAGASCAR",
+          languageGroup: "Choisir la langue",
+          menuOpen: "Ouvrir le menu",
+          menuClose: "Fermer le menu",
+          mainNavigation: "Navigation principale",
+          navHome: "Accueil",
+          navProducts: "Nos produits",
+          navAbout: "Notre maison",
+          navApproach: "Notre approche",
+          navContact: "Parlons de votre projet",
+          heroEyebrow: "Matières naturelles · Madagascar",
+          heroTitle: "La richesse de la terre, <em>à la source.</em>",
+          heroCopy: "INDUSTONE MADA accompagne l’achat et l’exportation de mica et de pierres depuis Madagascar, avec un interlocuteur attentif à chaque étape.",
+          heroProducts: "Découvrir nos produits",
+          heroContact: "Nous contacter",
+          heroMetaLabel: "Informations sur l’entreprise",
+          heroMeta1: "Entreprise basée à Madagascar",
+          heroMeta2: "Échanges directs",
+          heroMeta3: "Demandes sur mesure",
+          trustLabel: "Nos engagements",
+          trust1: "Un échange de confiance",
+          trust2: "Une ouverture sur l’international",
+          trust3: "Une attention aux matières",
+          productsEyebrow: "Notre sélection",
+          productsTitle: "Des matières singulières, des possibilités multiples.",
+          productsIntro: "Découvrez les familles de produits que nous proposons. Contactez-nous pour échanger sur votre besoin.",
+          filterGroup: "Filtrer les produits",
+          filterAll: "Tout voir",
+          filterMica: "Mica",
+          filterStones: "Pierres",
+          productAsk: "Demander des informations",
+          micaMuscoviteTitle: "Muscovite",
+          micaMuscoviteCopy: "Cristal naturel en feuillets, représentatif de la famille des micas.",
+          micaBiotiteTitle: "Biotite",
+          micaBiotiteCopy: "Exemple de mica sombre à la structure cristalline bien visible.",
+          micaBiotiteFanTitle: "Biotite en éventail",
+          micaBiotiteFanCopy: "Spécimen naturel présentant les lamelles caractéristiques de la biotite.",
+          micaPegmatiteTitle: "Mica en pegmatite",
+          micaPegmatiteCopy: "Muscovite et biotite observées dans une roche pegmatitique.",
+          stoneLiddicoatiteTitle: "Liddicoatite & microcline",
+          stoneLiddicoatiteCopy: "Tourmaline malgache présentée avec son minéral associé, le microcline.",
+          stoneQuartzTitle: "Liddicoatite & quartz",
+          stoneQuartzCopy: "Un spécimen naturel de tourmaline associé à des cristaux de quartz.",
+          stoneTourmalineTitle: "Tourmaline liddicoatite",
+          stoneTourmalineCopy: "Un exemple de tourmaline cristallisée provenant des pegmatites malgaches.",
+          stoneTourmalineColorsTitle: "Tourmaline colorée",
+          stoneTourmalineColorsCopy: "Les nuances et zonations colorées caractéristiques de la tourmaline.",
+          filterEmpty: "Aucun produit ne correspond à ce filtre.",
+          imageNotice: "Photographies de spécimens minéraux réels. Chaque photo est créditée et liée à sa source.",
+          aboutImage: "Paysage naturel verdoyant de Madagascar",
+          aboutNote: "Au cœur de Madagascar",
+          aboutLocation: "Ancrés à Antehiroka",
+          aboutEyebrow: "À propos de nous",
+          aboutTitle: "Une entreprise locale, tournée vers le monde.",
+          aboutCopy: "INDUSTONE MADA exerce ses activités d’achat et d’exportation de pierres industrielles, de pierres fines et de mica depuis Madagascar. Nous privilégions les échanges directs afin de comprendre les attentes de chaque partenaire.",
+          aboutPoint1: "Un interlocuteur pour parler de vos besoins et de votre demande.",
+          aboutPoint2: "Des échanges adaptés à la nature des produits recherchés.",
+          aboutPoint3: "Une entreprise enregistrée à Madagascar.",
+          processEyebrow: "Notre approche",
+          processTitle: "Un premier échange, simplement.",
+          processIntro: "Chaque projet commence par une conversation claire autour de votre besoin.",
+          processStep1Title: "Vous nous partagez votre recherche",
+          processStep1Copy: "Indiquez le produit qui vous intéresse, votre besoin et les informations utiles à votre demande.",
+          processStep2Title: "Nous échangeons sur les détails",
+          processStep2Copy: "Un interlocuteur prend connaissance de votre demande et échange avec vous sur les éléments à préciser.",
+          processStep3Title: "Nous étudions la suite ensemble",
+          processStep3Copy: "Les disponibilités et modalités sont abordées directement avec vous, en fonction de votre projet.",
+          contactEyebrow: "Entrons en contact",
+          contactTitle: "Parlons de votre projet.",
+          contactCopy: "Choisissez votre interlocuteur et envoyez-nous votre demande par WhatsApp ou par e-mail. Nous serons heureux d’échanger avec vous.",
+          emailLabel: "E-mail",
+          addressLabel: "Adresse",
+          companyAddress: "Lot AF 369, Amboaroy Antehiroka, Madagascar",
+          registrationLabel: "Immatriculation",
+          formTitle: "Votre demande",
+          formIntro: "Sélectionnez un interlocuteur puis choisissez votre moyen de contact.",
+          contactGroup: "Choisir un interlocuteur",
+          nameLabel: "Votre nom ou votre entreprise",
+          namePlaceholder: "Ex. : Jean Dupont, Société X",
+          messageLabel: "Votre message",
+          messagePlaceholder: "Quel produit recherchez-vous ? Parlez-nous de votre projet.",
+          sendWhatsApp: "Envoyer par WhatsApp",
+          sendEmail: "Envoyer par e-mail",
+          copyright: "Tous droits réservés.",
+          contactSelected: "Votre interlocuteur sélectionné : {name}.",
+          defaultMessage: "Je souhaiterais obtenir plus d’informations sur vos produits.",
+          productMessage: "Bonjour, je souhaiterais obtenir des informations sur : {product}.",
+          whatsappMessage: "Bonjour {contact} (INDUSTONE MADA),\n\nJe suis : {name}\n\n{message}\n",
+          whatsappReady: "Votre demande est prête à être envoyée à {name} sur WhatsApp.",
+          emailSubject: "Demande de renseignements — {name}",
+          emailReady: "Votre application de messagerie va s’ouvrir avec votre demande.",
+          imageMuscovite: "Cristal naturel de muscovite, variété claire de mica",
+          imageBiotite: "Échantillon naturel de biotite aux couches feuilletées",
+          imageBiotiteFan: "Spécimen de biotite naturelle aux cristaux en éventail",
+          imageMicaPegmatite: "Muscovite et biotite associées dans une pegmatite",
+          imageLiddicoatiteMicrocline: "Cristaux de liddicoatite et de microcline provenant de Madagascar",
+          imageLiddicoatiteQuartz: "Cristaux de liddicoatite et de quartz",
+          imageLiddicoatite: "Échantillon cristallisé de liddicoatite, tourmaline du Madagascar",
+          imageTourmaline: "Tourmaline liddicoatite aux couleurs naturelles",
+          creditLavinsky: "Photo : Robert M. Lavinsky · CC BY-SA 3.0",
+          creditJames: "Photo : James St. John · CC BY 2.0",
+          creditGery: "Photo : Parent Géry · CC0",
+          creditGeryShare: "Photo : Parent Géry · CC BY-SA 3.0"
+        },
+        en: {
+          pageTitle: "INDUSTONE MADA — Madagascar Minerals",
+          description: "INDUSTONE MADA supports your mica, industrial stone and gemstone sourcing and export enquiries from Madagascar.",
+          brandTagline: "MADAGASCAR MINERALS",
+          languageGroup: "Choose language",
+          menuOpen: "Open menu",
+          menuClose: "Close menu",
+          mainNavigation: "Main navigation",
+          navHome: "Home",
+          navProducts: "Products",
+          navAbout: "About us",
+          navApproach: "Our approach",
+          navContact: "Let’s discuss your project",
+          heroEyebrow: "Natural materials · Madagascar",
+          heroTitle: "The richness of the earth, <em>at its source.</em>",
+          heroCopy: "INDUSTONE MADA supports mica and stone sourcing and exports from Madagascar, with a dedicated contact at every step.",
+          heroProducts: "Explore our products",
+          heroContact: "Contact us",
+          heroMetaLabel: "Company information",
+          heroMeta1: "Based in Madagascar",
+          heroMeta2: "Direct communication",
+          heroMeta3: "Tailored enquiries",
+          trustLabel: "Our commitments",
+          trust1: "A relationship built on trust",
+          trust2: "An international outlook",
+          trust3: "Care for natural materials",
+          productsEyebrow: "Our selection",
+          productsTitle: "Distinctive materials, a world of possibilities.",
+          productsIntro: "Explore the mineral families we feature. Get in touch to discuss your requirements.",
+          filterGroup: "Filter products",
+          filterAll: "View all",
+          filterMica: "Mica",
+          filterStones: "Gemstones",
+          productAsk: "Request information",
+          micaMuscoviteTitle: "Muscovite",
+          micaMuscoviteCopy: "A natural, sheet-like crystal representative of the mica family.",
+          micaBiotiteTitle: "Biotite",
+          micaBiotiteCopy: "An example of dark mica with a clearly visible crystal structure.",
+          micaBiotiteFanTitle: "Fan-shaped biotite",
+          micaBiotiteFanCopy: "A natural specimen showing biotite’s characteristic sheets.",
+          micaPegmatiteTitle: "Mica in pegmatite",
+          micaPegmatiteCopy: "Muscovite and biotite found together in pegmatite rock.",
+          stoneLiddicoatiteTitle: "Liddicoatite & microcline",
+          stoneLiddicoatiteCopy: "Madagascan tourmaline shown with its associated mineral, microcline.",
+          stoneQuartzTitle: "Liddicoatite & quartz",
+          stoneQuartzCopy: "A natural tourmaline specimen associated with quartz crystals.",
+          stoneTourmalineTitle: "Liddicoatite tourmaline",
+          stoneTourmalineCopy: "An example of crystallized tourmaline from Madagascan pegmatites.",
+          stoneTourmalineColorsTitle: "Colourful tourmaline",
+          stoneTourmalineColorsCopy: "The characteristic colours and zoning found in tourmaline.",
+          filterEmpty: "No products match this filter.",
+          imageNotice: "Photographs of real mineral specimens. Each image is credited and linked to its source.",
+          aboutImage: "Lush natural landscape in Madagascar",
+          aboutNote: "In the heart of Madagascar",
+          aboutLocation: "Based in Antehiroka",
+          aboutEyebrow: "About us",
+          aboutTitle: "A locally rooted company with a global outlook.",
+          aboutCopy: "INDUSTONE MADA sources and exports industrial stones, gemstones and mica from Madagascar. We favour direct communication to understand what each partner is looking for.",
+          aboutPoint1: "A dedicated contact to discuss your needs and enquiry.",
+          aboutPoint2: "A conversation tailored to the materials you are looking for.",
+          aboutPoint3: "A company registered in Madagascar.",
+          processEyebrow: "Our approach",
+          processTitle: "A straightforward first conversation.",
+          processIntro: "Every project starts with a clear conversation about what you need.",
+          processStep1Title: "Tell us what you are looking for",
+          processStep1Copy: "Share the product you are interested in, your requirements and any useful details.",
+          processStep2Title: "We discuss the details",
+          processStep2Copy: "A dedicated contact reviews your enquiry and discusses any details that need clarifying.",
+          processStep3Title: "We explore the next steps together",
+          processStep3Copy: "Availability and terms are discussed directly with you in line with your project.",
+          contactEyebrow: "Get in touch",
+          contactTitle: "Let’s discuss your project.",
+          contactCopy: "Choose a contact and send your enquiry by WhatsApp or email. We look forward to hearing from you.",
+          emailLabel: "Email",
+          addressLabel: "Address",
+          companyAddress: "Lot AF 369, Amboaroy Antehiroka, Madagascar",
+          registrationLabel: "Registration",
+          formTitle: "Your enquiry",
+          formIntro: "Choose a contact, then select how you would like to get in touch.",
+          contactGroup: "Choose a contact",
+          nameLabel: "Your name or company",
+          namePlaceholder: "e.g. Jane Smith, Company Ltd",
+          messageLabel: "Your message",
+          messagePlaceholder: "What are you looking for? Tell us about your project.",
+          sendWhatsApp: "Send via WhatsApp",
+          sendEmail: "Send via email",
+          copyright: "All rights reserved.",
+          contactSelected: "Selected contact: {name}.",
+          defaultMessage: "I would like to learn more about your products.",
+          productMessage: "Hello, I would like to learn more about: {product}.",
+          whatsappMessage: "Hello {contact} (INDUSTONE MADA),\n\nMy name is: {name}\n\n{message}\n",
+          whatsappReady: "Your enquiry is ready to send to {name} via WhatsApp.",
+          emailSubject: "Product enquiry — {name}",
+          emailReady: "Your email application will open with your enquiry.",
+          imageMuscovite: "Natural muscovite crystal, a light-coloured mica",
+          imageBiotite: "Natural biotite specimen with layered sheets",
+          imageBiotiteFan: "Natural biotite specimen with fan-shaped crystals",
+          imageMicaPegmatite: "Muscovite and biotite together in pegmatite",
+          imageLiddicoatiteMicrocline: "Liddicoatite and microcline crystals from Madagascar",
+          imageLiddicoatiteQuartz: "Liddicoatite and quartz crystals",
+          imageLiddicoatite: "Crystallized liddicoatite, a Madagascan tourmaline",
+          imageTourmaline: "Liddicoatite tourmaline in natural colours",
+          creditLavinsky: "Photo: Robert M. Lavinsky · CC BY-SA 3.0",
+          creditJames: "Photo: James St. John · CC BY 2.0",
+          creditGery: "Photo: Parent Géry · CC0",
+          creditGeryShare: "Photo: Parent Géry · CC BY-SA 3.0"
+        }
+      };
+      const companyEmail = "stephanefanevaniaina@gmail.com";
+      let selectedContact = contactOptions[0];
+      let contactWasSelected = false;
+      let language = "fr";
+      try {
+        const savedLanguage = window.localStorage.getItem("industone-language");
+        if (savedLanguage === "fr" || savedLanguage === "en") language = savedLanguage;
+      } catch (error) {
+        if (error.name !== "SecurityError") throw error;
+      }
+
+      const translate = (key, values = {}) => {
+        let text = languageMessages[language][key];
+        Object.entries(values).forEach(([name, value]) => {
+          text = text.replaceAll(`{${name}}`, value);
+        });
+        return text;
+      };
+
+      const applyLanguage = (nextLanguage) => {
+        language = nextLanguage;
+        document.documentElement.lang = language;
+        document.title = translate("pageTitle");
+        document.querySelector('meta[name="description"]').content = translate("description");
+        document.querySelectorAll("[data-i18n]").forEach((element) => {
+          element.textContent = translate(element.dataset.i18n);
+        });
+        document.querySelectorAll("[data-i18n-html]").forEach((element) => {
+          element.innerHTML = translate(element.dataset.i18nHtml);
+        });
+        document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+          element.alt = translate(element.dataset.i18nAlt);
+        });
+        document.querySelectorAll("[data-i18n-aria]").forEach((element) => {
+          element.setAttribute("aria-label", translate(element.dataset.i18nAria));
+        });
+        document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+          element.placeholder = translate(element.dataset.i18nPlaceholder);
+        });
+        languageButtons.forEach((button) => {
+          button.setAttribute("aria-pressed", String(button.dataset.language === language));
+        });
+        menuToggle.setAttribute("aria-label", translate(menuToggle.getAttribute("aria-expanded") === "true" ? "menuClose" : "menuOpen"));
+        if (contactWasSelected) {
+          formStatus.textContent = translate("contactSelected", { name: selectedContact.dataset.name });
+        }
+        try {
+          window.localStorage.setItem("industone-language", language);
+        } catch (error) {
+          if (error.name !== "SecurityError" && error.name !== "QuotaExceededError") throw error;
+        }
+      };
+
+      const setMenuOpen = (isOpen) => {
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+        menuToggle.setAttribute("aria-label", translate(isOpen ? "menuClose" : "menuOpen"));
+        navigation.classList.toggle("is-open", isOpen);
+      };
+
+      languageButtons.forEach((button) => {
+        button.addEventListener("click", () => applyLanguage(button.dataset.language));
+      });
+
+      menuToggle.addEventListener("click", () => {
+        setMenuOpen(menuToggle.getAttribute("aria-expanded") !== "true");
+      });
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => setMenuOpen(false));
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") setMenuOpen(false);
+      });
+
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const filter = button.dataset.filter;
+          filterButtons.forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+          let visibleCount = 0;
+          productCards.forEach((card) => {
+            const isVisible = filter === "all" || card.dataset.category === filter;
+            card.hidden = !isVisible;
+            if (isVisible) visibleCount += 1;
+          });
+          emptyMessage.hidden = visibleCount !== 0;
+        });
+      });
+
+      contactOptions.forEach((option) => {
+        option.addEventListener("click", () => {
+          contactOptions.forEach((item) => item.setAttribute("aria-pressed", String(item === option)));
+          selectedContact = option;
+          contactWasSelected = true;
+          formStatus.textContent = translate("contactSelected", { name: option.dataset.name });
+        });
+      });
+
+      document.querySelectorAll(".product-link").forEach((link) => {
+        link.addEventListener("click", () => {
+          const messageField = document.querySelector("#client-message");
+          if (!messageField.value.trim()) {
+            messageField.value = translate("productMessage", {
+              product: link.closest(".product-card").querySelector("h3").textContent
+            });
+          }
+        });
+      });
+
+      contactForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (!contactForm.reportValidity()) return;
+
+        const formData = new FormData(contactForm);
+        const clientName = formData.get("name").trim();
+        const clientMessage = formData.get("message").trim();
+        const contactName = selectedContact.dataset.name;
+        const message = translate("whatsappMessage", {
+          contact: contactName,
+          name: clientName,
+          message: clientMessage || translate("defaultMessage")
+        });
+        const action = event.submitter?.value || "email";
+
+        if (action === "whatsapp") {
+          const whatsappUrl = `https://wa.me/${selectedContact.dataset.phone}?text=${encodeURIComponent(message)}`;
+          window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+          formStatus.textContent = translate("whatsappReady", { name: contactName });
+          return;
+        }
+
+        const subject = encodeURIComponent(translate("emailSubject", { name: clientName }));
+        window.location.href = `mailto:${companyEmail}?subject=${subject}&body=${encodeURIComponent(message)}`;
+        formStatus.textContent = translate("emailReady");
+      });
+
+      const updateActiveNavigation = () => {
+        const marker = window.scrollY + document.querySelector(".site-header").offsetHeight + Math.min(160, window.innerHeight * 0.2);
+        let activeSection = sections[0];
+        sections.forEach((section) => {
+          if (section.offsetTop <= marker) activeSection = section;
+        });
+        if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 40) {
+          activeSection = sections[sections.length - 1];
+        }
+        navLinks.forEach((link) => {
+          if (link.getAttribute("href") === `#${activeSection.id}`) {
+            link.setAttribute("aria-current", "location");
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        });
+      };
+
+      let navigationFrame = 0;
+      const scheduleNavigationUpdate = () => {
+        if (navigationFrame) return;
+        navigationFrame = window.requestAnimationFrame(() => {
+          navigationFrame = 0;
+          updateActiveNavigation();
+        });
+      };
+
+      window.addEventListener("scroll", scheduleNavigationUpdate, { passive: true });
+      window.addEventListener("resize", scheduleNavigationUpdate);
+      window.addEventListener("hashchange", scheduleNavigationUpdate);
+      document.querySelector("#current-year").textContent = new Date().getFullYear();
+      applyLanguage(language);
+      updateActiveNavigation();
+    })();
+  </script>
+</body>
+</html>
